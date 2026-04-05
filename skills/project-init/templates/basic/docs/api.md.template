@@ -1,0 +1,40 @@
+# API Documentation
+
+## Overview
+
+[Provide an overview of your API or project interfaces]
+
+## Endpoints
+
+[Document your API endpoints, functions, or modules]
+
+### Example
+
+```
+GET /api/example
+```
+
+**Description**: [Describe what this endpoint does]
+
+**Parameters**:
+- `param1` (string): [Description]
+- `param2` (number): [Description]
+
+**Response**:
+```json
+{
+  "status": "success",
+  "data": {}
+}
+```
+
+## Examples
+
+[Provide usage examples]
+
+## Error Handling
+
+[Document error responses and codes]
+
+---
+*This documentation is part of {{PROJECT_NAME}}*

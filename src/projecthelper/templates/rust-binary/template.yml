@@ -1,0 +1,18 @@
+name: rust-binary
+description: Rust CLI application template with clap for argument parsing
+language: rust
+project_type: binary
+version: 1.0.0
+author: ProjectHelper
+
+variables:
+  rust_edition: "2021"
+  clap_version: "4.0"
+  license: "MIT OR Apache-2.0"
+
+pre_hooks:
+  - "rustup --version || echo 'Warning: Rust not found. Install from https://rustup.rs/'"
+
+post_hooks:
+  - "cargo check"
+  - "echo 'Rust binary project created! Run: cargo run -- --help'"

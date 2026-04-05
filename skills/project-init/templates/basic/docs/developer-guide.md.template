@@ -1,0 +1,93 @@
+# Developer Guide
+
+## Development Setup
+
+### Prerequisites
+
+[List development prerequisites]
+
+### Environment Setup
+
+1. [Setup step 1]
+2. [Setup step 2]
+3. [Setup step 3]
+
+### Development Workflow
+
+1. **Code Organization**:
+   - Place source code in `src/`
+   - Write tests in `tests/`
+   - Document APIs in `docs/`
+
+2. **Git Workflow**:
+   ```bash
+   # Create feature branch
+   git checkout -b feature/new-feature
+
+   # Make changes and commit
+   git add .
+   git commit -m "Add new feature"
+
+   # Push and create PR
+   git push origin feature/new-feature
+   ```
+
+3. **Testing**:
+   ```bash
+   # Run tests
+   [Add test command]
+
+   # Run with coverage
+   [Add coverage command]
+   ```
+
+## Code Standards
+
+### Style Guide
+- [Define coding standards]
+- [Naming conventions]
+- [File organization]
+
+### Quality Checks
+- [Linting rules]
+- [Code formatting]
+- [Documentation requirements]
+
+## Architecture
+
+### Project Structure
+```
+{{PROJECT_NAME}}/
+├── src/              # Main source code
+├── tests/            # Test files
+├── docs/             # Documentation
+└── [other dirs]      # Additional directories
+```
+
+### Design Patterns
+[Describe architectural patterns used]
+
+## Contributing
+
+### Pull Request Process
+1. Fork the repository
+2. Create a feature branch
+3. Write tests for new features
+4. Update documentation
+5. Submit pull request
+
+### Code Review Guidelines
+- [Review checklist]
+- [Testing requirements]
+- [Documentation updates]
+
+## Deployment
+
+### Build Process
+[Describe build steps]
+
+### Release Process
+[Describe release workflow]
+
+---
+*This guide is part of {{PROJECT_NAME}} development documentation*

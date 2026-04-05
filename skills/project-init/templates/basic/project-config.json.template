@@ -1,0 +1,27 @@
+{
+  "projectName": "{{PROJECT_NAME}}",
+  "projectDescription": "{{PROJECT_DESCRIPTION}}",
+  "author": {
+    "name": "{{AUTHOR_NAME}}",
+    "email": "{{AUTHOR_EMAIL}}"
+  },
+  "createdAt": "{{CREATION_DATE}}",
+  "projectType": "{{PROJECT_TYPE}}",
+  "version": "1.0.0",
+  "configuration": {
+    "structure": {
+      "srcDir": "src",
+      "docsDir": "docs",
+      "testsDir": "tests"
+    },
+    "tools": {
+      "versionControl": "git",
+      "projectHelper": "claude-code-project-helper"
+    }
+  },
+  "metadata": {
+    "generator": "claude-code-project-helper",
+    "generatorVersion": "1.0.0",
+    "template": "basic"
+  }
+}

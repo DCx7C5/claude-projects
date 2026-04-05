@@ -1,0 +1,68 @@
+# General
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Build artifacts
+build/
+dist/
+*.o
+*.so
+*.dylib
+*.dll
+
+# Package managers
+node_modules/
+*.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Archives
+*.tar.gz
+*.zip
+*.rar
+
+# System
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Dependency directories
+vendor/
+packages/
+
+# Generated files
+generated/
+auto-generated/
+
+# Backup files
+*.backup
+*.bak
+*.orig
+
+# Project specific
+# Add your project-specific ignore patterns here

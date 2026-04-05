@@ -1,0 +1,15 @@
+name: rust-library
+description: Rust library crate template with proper documentation and testing
+language: rust
+project_type: library
+version: 1.0.0
+author: ProjectHelper
+
+variables:
+  rust_edition: "2021"
+  license: "MIT OR Apache-2.0"
+
+post_hooks:
+  - "cargo check"
+  - "cargo test"
+  - "echo 'Rust library project created! Run: cargo doc --open'"

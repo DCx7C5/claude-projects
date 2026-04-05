@@ -1,0 +1,45 @@
+use clap::{Arg, Command, ArgMatches};
+use anyhow::Result;
+
+mod cli;
+mod commands;
+
+fn main() -> Result<()> {
+    let app = Command::new("{{ project_name }}")
+        .version("0.1.0")
+        .author("{{ author_name }} <{{ author_email }}>")
+        .about("{{ project_description }}")
+        .arg(
+            Arg::new("verbose")
+                .short('v')
+                .long("verbose")
+                .action(clap::ArgAction::SetTrue)
+                .help("Enable verbose output")
+        )
+        .subcommand(
+            Command::new("hello")
+                .about("Say hello")
+                .arg(
+                    Arg::new("name")
+                        .short('n')
+                        .long("name")
+                        .value_name("NAME")
+                        .help("Name to greet")
+                        .default_value("World")
+                )
+        );
+
+    let matches = app.get_matches();
+
+    if matches.get_flag("verbose") {
+        eprintln!("Verbose mode enabled");
+    }
+
+    match matches.subcommand() {
+        Some(("hello", sub_matches)) => commands::hello::run(sub_matches),
+        _ => {
+            eprintln!("No subcommand provided. Use --help for usage information.");
+            Ok(())
+        }
+    }
+}

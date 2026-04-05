@@ -1,0 +1,166 @@
+//! # {{ project_name }}
+//!
+//! {{ project_description }}
+//!
+//! ## Quick Start
+//!
+//! ```rust
+//! use {{ project_name | replace('-', '_') }}::*;
+//!
+//! // Example usage
+//! let result = hello("World");
+//! assert_eq!(result, "Hello, World!");
+//! ```
+
+use std::fmt;
+use thiserror::Error;
+
+/// Custom error type for {{ project_name }}
+#[derive(Error, Debug, PartialEq)]
+pub enum {{ project_name | title | replace('-', '') }}Error {
+    #[error("Invalid input: {0}")]
+    InvalidInput(String),
+
+    #[error("Operation failed: {0}")]
+    OperationFailed(String),
+}
+
+/// Result type alias for convenience
+pub type Result<T> = std::result::Result<T, {{ project_name | title | replace('-', '') }}Error>;
+
+/// A simple greeting function that demonstrates the library API
+///
+/// # Arguments
+///
+/// * `name` - The name to greet
+///
+/// # Returns
+///
+/// A greeting string
+///
+/// # Examples
+///
+/// ```
+/// use {{ project_name | replace('-', '_') }}::hello;
+///
+/// let greeting = hello("Rust");
+/// assert_eq!(greeting, "Hello, Rust!");
+/// ```
+pub fn hello(name: &str) -> String {
+    format!("Hello, {}!", name)
+}
+
+/// A more complex function that demonstrates error handling
+///
+/// # Arguments
+///
+/// * `input` - A string that must not be empty
+///
+/// # Returns
+///
+/// The processed input or an error if invalid
+///
+/// # Errors
+///
+/// Returns [`{{ project_name | title | replace('-', '') }}Error::InvalidInput`] if the input is empty
+///
+/// # Examples
+///
+/// ```
+/// use {{ project_name | replace('-', '_') }}::process_input;
+///
+/// assert!(process_input("valid").is_ok());
+/// assert!(process_input("").is_err());
+/// ```
+pub fn process_input(input: &str) -> Result<String> {
+    if input.is_empty() {
+        return Err({{ project_name | title | replace('-', '') }}Error::InvalidInput(
+            "Input cannot be empty".to_string()
+        ));
+    }
+
+    Ok(format!("Processed: {}", input))
+}
+
+/// A struct that demonstrates more complex library functionality
+#[derive(Debug, Clone, PartialEq)]
+pub struct {{ project_name | title | replace('-', '') }} {
+    name: String,
+    value: i32,
+}
+
+impl {{ project_name | title | replace('-', '') }} {
+    /// Create a new instance
+    pub fn new(name: String, value: i32) -> Self {
+        Self { name, value }
+    }
+
+    /// Get the name
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+
+    /// Get the value
+    pub fn value(&self) -> i32 {
+        self.value
+    }
+
+    /// Update the value
+    pub fn set_value(&mut self, value: i32) {
+        self.value = value;
+    }
+
+    /// Calculate something with the value
+    pub fn calculate(&self) -> i32 {
+        self.value * 2
+    }
+}
+
+impl fmt::Display for {{ project_name | title | replace('-', '') }} {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}: {}", self.name, self.value)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_hello() {
+        assert_eq!(hello("World"), "Hello, World!");
+        assert_eq!(hello("Rust"), "Hello, Rust!");
+    }
+
+    #[test]
+    fn test_process_input_valid() {
+        let result = process_input("test");
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), "Processed: test");
+    }
+
+    #[test]
+    fn test_process_input_empty() {
+        let result = process_input("");
+        assert!(result.is_err());
+        match result.unwrap_err() {
+            {{ project_name | title | replace('-', '') }}Error::InvalidInput(msg) => {
+                assert_eq!(msg, "Input cannot be empty");
+            }
+            _ => panic!("Wrong error type"),
+        }
+    }
+
+    #[test]
+    fn test_struct_functionality() {
+        let mut item = {{ project_name | title | replace('-', '') }}::new("test".to_string(), 5);
+
+        assert_eq!(item.name(), "test");
+        assert_eq!(item.value(), 5);
+        assert_eq!(item.calculate(), 10);
+
+        item.set_value(10);
+        assert_eq!(item.value(), 10);
+        assert_eq!(item.calculate(), 20);
+    }
+}

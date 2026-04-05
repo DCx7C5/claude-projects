@@ -1,0 +1,49 @@
+# User Guide
+
+## Introduction
+
+Welcome to {{PROJECT_NAME}}! This guide will help you get started and make the most of this project.
+
+## Installation
+
+[Provide detailed installation instructions]
+
+## Getting Started
+
+[Provide step-by-step getting started instructions]
+
+## Features
+
+[List and explain the main features]
+
+### Feature 1
+[Describe feature 1]
+
+### Feature 2
+[Describe feature 2]
+
+## Configuration
+
+[Explain how to configure the project]
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue**: [Common problem]
+**Solution**: [How to solve it]
+
+## FAQ
+
+**Q**: [Frequently asked question]
+**A**: [Answer to the question]
+
+## Support
+
+If you need help:
+- Check the [API Documentation](api.md)
+- Review the [Developer Guide](developer-guide.md)
+- Contact: {{AUTHOR_EMAIL}}
+
+---
+*This guide is part of {{PROJECT_NAME}}*

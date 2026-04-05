@@ -1,0 +1,48 @@
+# Tests for {{PROJECT_NAME}}
+
+## Test Structure
+
+This directory contains tests for {{PROJECT_NAME}}.
+
+## Running Tests
+
+[Add instructions for running tests based on your framework]
+
+## Test Categories
+
+### Unit Tests
+- Test individual functions and methods
+- Located in `unit/` subdirectory
+
+### Integration Tests
+- Test component interactions
+- Located in `integration/` subdirectory
+
+### End-to-End Tests
+- Test complete workflows
+- Located in `e2e/` subdirectory
+
+## Writing Tests
+
+### Guidelines
+1. Write descriptive test names
+2. Test both positive and negative cases
+3. Mock external dependencies
+4. Keep tests focused and independent
+
+### Example Test Structure
+```python
+# Example test structure (adjust for your language/framework)
+def test_main_function():
+    # Arrange
+    input_data = "test input"
+
+    # Act
+    result = main_function(input_data)
+
+    # Assert
+    assert result == "expected output"
+```
+
+---
+*Part of {{PROJECT_NAME}} test suite*

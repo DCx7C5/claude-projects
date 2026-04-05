@@ -1,0 +1,165 @@
+# {{ project_name }}
+
+{{ project_description }}
+
+[![Crates.io](https://img.shields.io/crates/v/{{ project_name }}.svg)](https://crates.io/crates/{{ project_name }})
+[![Documentation](https://docs.rs/{{ project_name }}/badge.svg)](https://docs.rs/{{ project_name }})
+[![Build Status](https://github.com/{{ author_name }}/{{ project_name }}/workflows/CI/badge.svg)](https://github.com/{{ author_name }}/{{ project_name }}/actions)
+
+## Features
+
+- 🦀 Written in Rust for performance and safety
+- 📚 Comprehensive documentation with examples
+- 🧪 Well-tested with unit tests and benchmarks
+- 🔧 Simple and intuitive API
+
+## Installation
+
+Add this to your `Cargo.toml`:
+
+```toml
+[dependencies]
+{{ project_name }} = "0.1.0"
+```
+
+## Quick Start
+
+```rust
+use {{ project_name | replace('-', '_') }}::*;
+
+fn main() {
+    // Basic greeting
+    let greeting = hello("World");
+    println!("{}", greeting); // "Hello, World!"
+
+    // Error handling example
+    match process_input("some input") {
+        Ok(result) => println!("Success: {}", result),
+        Err(e) => eprintln!("Error: {}", e),
+    }
+
+    // Using the main struct
+    let mut item = {{ project_name | title | replace('-', '') }}::new("example".to_string(), 42);
+    println!("Item: {}", item); // "example: 42"
+    println!("Calculated: {}", item.calculate()); // "84"
+}
+```
+
+## API Documentation
+
+### Functions
+
+- [`hello(name: &str) -> String`](https://docs.rs/{{ project_name }}/latest/{{ project_name | replace('-', '_') }}/fn.hello.html) - Simple greeting function
+- [`process_input(input: &str) -> Result<String>`](https://docs.rs/{{ project_name }}/latest/{{ project_name | replace('-', '_') }}/fn.process_input.html) - Process input with error handling
+
+### Types
+
+- [`{{ project_name | title | replace('-', '') }}`](https://docs.rs/{{ project_name }}/latest/{{ project_name | replace('-', '_') }}/struct.{{ project_name | title | replace('-', '') }}.html) - Main library struct
+- [`{{ project_name | title | replace('-', '') }}Error`](https://docs.rs/{{ project_name }}/latest/{{ project_name | replace('-', '_') }}/enum.{{ project_name | title | replace('-', '') }}Error.html) - Error types
+
+For complete API documentation, run:
+
+```bash
+cargo doc --open
+```
+
+## Examples
+
+See the [`examples/`](examples/) directory for more comprehensive examples:
+
+```bash
+cargo run --example basic
+```
+
+## Development
+
+### Prerequisites
+
+- [Rust](https://rustup.rs/) (latest stable version)
+
+### Building
+
+```bash
+cargo build
+```
+
+### Testing
+
+```bash
+# Run all tests
+cargo test
+
+# Run tests with output
+cargo test -- --nocapture
+
+# Run specific test
+cargo test test_hello
+```
+
+### Benchmarking
+
+```bash
+cargo bench
+```
+
+### Documentation
+
+```bash
+# Generate and open documentation
+cargo doc --open
+
+# Test documentation examples
+cargo test --doc
+```
+
+### Linting
+
+```bash
+# Check formatting
+cargo fmt --check
+
+# Run clippy
+cargo clippy -- -D warnings
+```
+
+## Project Structure
+
+```
+{{ project_name }}/
+├── Cargo.toml          # Project configuration and dependencies
+├── src/
+│   └── lib.rs          # Main library code
+├── tests/              # Integration tests
+├── benches/            # Benchmarks
+├── examples/           # Example code
+└── README.md           # This file
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Add tests for new functionality
+5. Ensure all tests pass (`cargo test`)
+6. Check formatting (`cargo fmt`)
+7. Run clippy (`cargo clippy`)
+8. Commit your changes (`git commit -m 'Add amazing feature'`)
+9. Push to the branch (`git push origin feature/amazing-feature`)
+10. Open a Pull Request
+
+## License
+
+This project is licensed under {{ license }}.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
+
+## Author
+
+**{{ author_name }}** - [{{ author_email }}]
+
+---
+
+*Generated on {{ creation_date }} by [ProjectHelper](https://github.com/claude-assistant/projecthelper)*

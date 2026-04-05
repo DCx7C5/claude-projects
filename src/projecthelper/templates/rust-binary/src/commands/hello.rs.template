@@ -1,0 +1,8 @@
+use clap::ArgMatches;
+use anyhow::Result;
+
+pub fn run(matches: &ArgMatches) -> Result<()> {
+    let name = matches.get_one::<String>("name").unwrap();
+    println!("Hello, {}!", name);
+    Ok(())
+}

@@ -1,0 +1,9 @@
+name: basic
+description: Basic project template with essential files and structure
+language: general
+project_type: general
+version: 1.0.0
+author: ProjectHelper
+
+variables:
+  license: "MIT"

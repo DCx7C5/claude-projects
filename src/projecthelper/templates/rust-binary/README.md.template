@@ -1,0 +1,106 @@
+# {{ project_name }}
+
+{{ project_description }}
+
+## Installation
+
+### Prerequisites
+
+- [Rust](https://rustup.rs/) (latest stable version)
+
+### From Source
+
+```bash
+git clone https://github.com/{{ author_name }}/{{ project_name }}
+cd {{ project_name }}
+cargo build --release
+```
+
+The binary will be available at `target/release/{{ project_name }}`.
+
+### Using Cargo
+
+```bash
+cargo install {{ project_name }}
+```
+
+## Usage
+
+```bash
+# Basic usage
+{{ project_name }} --help
+
+# Say hello
+{{ project_name }} hello --name "Rust"
+
+# Verbose mode
+{{ project_name }} -v hello
+```
+
+## Commands
+
+- `hello` - Say hello to someone
+  - `--name` / `-n` - Name to greet (default: World)
+
+## Options
+
+- `--verbose` / `-v` - Enable verbose output
+- `--help` / `-h` - Show help information
+- `--version` / `-V` - Show version information
+
+## Development
+
+### Building
+
+```bash
+cargo build
+```
+
+### Running Tests
+
+```bash
+cargo test
+```
+
+### Running with Debug Output
+
+```bash
+cargo run -- -v hello --name "Developer"
+```
+
+## Project Structure
+
+```
+{{ project_name }}/
+├── Cargo.toml          # Project configuration
+├── src/
+│   ├── main.rs         # Application entry point
+│   ├── cli.rs          # CLI utilities
+│   └── commands/       # Command implementations
+│       ├── mod.rs      # Commands module
+│       └── hello.rs    # Hello command
+└── README.md           # This file
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Add tests for new functionality
+5. Ensure tests pass (`cargo test`)
+6. Commit your changes (`git commit -m 'Add amazing feature'`)
+7. Push to the branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
+
+## License
+
+This project is licensed under {{ license }}.
+
+## Author
+
+**{{ author_name }}** - [{{ author_email }}]
+
+---
+
+*Generated on {{ creation_date }} by [ProjectHelper](https://github.com/claude-assistant/projecthelper)*

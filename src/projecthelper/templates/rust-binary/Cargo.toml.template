@@ -1,0 +1,24 @@
+[package]
+name = "{{ project_name }}"
+version = "0.1.0"
+edition = "{{ rust_edition }}"
+description = "{{ project_description }}"
+authors = ["{{ author_name }} <{{ author_email }}>"]
+license = "{{ license }}"
+readme = "README.md"
+repository = "https://github.com/{{ author_name }}/{{ project_name }}"
+keywords = ["cli", "tool"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "{{ project_name }}"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "{{ clap_version }}", features = ["derive"] }
+anyhow = "1.0"
+thiserror = "1.0"
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.0"

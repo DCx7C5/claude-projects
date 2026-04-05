@@ -1,0 +1,7 @@
+use clap::ArgMatches;
+
+pub fn parse_args() -> ArgMatches {
+    // CLI parsing logic can go here if needed
+    // This is a placeholder for future CLI enhancements
+    todo!()
+}
